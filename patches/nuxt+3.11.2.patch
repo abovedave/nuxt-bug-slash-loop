@@ -1,11 +1,13 @@
 diff --git a/node_modules/nuxt/dist/pages/runtime/plugins/router.js b/node_modules/nuxt/dist/pages/runtime/plugins/router.js
-index ed2753e..1cf1124 100644
+index ed2753e..7b181d5 100644
 --- a/node_modules/nuxt/dist/pages/runtime/plugins/router.js
 +++ b/node_modules/nuxt/dist/pages/runtime/plugins/router.js
-@@ -195,6 +195,12 @@ const plugin = defineNuxtPlugin({
+@@ -194,7 +194,13 @@ const plugin = defineNuxtPlugin({
+             path: to.fullPath
            }
          })));
-       } else if (import.meta.server && to.fullPath !== initialURL && (to.redirectedFrom || !isSamePath(to.fullPath, initialURL))) {
+-      } else if (import.meta.server && to.fullPath !== initialURL && (to.redirectedFrom || !isSamePath(to.fullPath, initialURL))) {
++      } else if (import.meta.server && to.redirectedFrom && to.fullPath !== initialURL) {
 +
 +        console.log('@@@@@@@@@@@@@@')
 +        console.log('initialURL:', initialURL)
